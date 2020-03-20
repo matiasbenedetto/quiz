@@ -1,0 +1,31 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "Quiz app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "keywords": [
+    "quiz",
+    "app",
+    "nextjs"
+  ],
+  "author": "Matias Benedetto <matias.benedetto@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "next": "^9.3.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.2",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "typescript": "^3.8.3"
+  }
+}
