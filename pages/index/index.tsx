@@ -1,14 +1,17 @@
-import { NextPage } from 'next';
-import Layout from '../components/Layout';
-import { useUser, useDispatchUser } from '../context/User';
-import userAction from '../context/User/actions';
-import { useDispatchGlossary } from '../context/Glossary'
-import { GlossaryItem } from '../context/Glossary/types';
-import glossaryActions from '../context/Glossary/actions';
-import api from '../api';
 import { useEffect } from 'react';
-import TextInput from '../components/UserInput';
-import StartQuizButtons from '../components/StartQuizButtons';
+import { NextPage } from 'next';
+
+import Layout from '../../components/Layout';
+import { useUser, useDispatchUser } from '../../context/User';
+import userAction from '../../context/User/actions';
+import { useDispatchGlossary } from '../../context/Glossary'
+import { GlossaryItem } from '../../context/Glossary/types';
+import glossaryActions from '../../context/Glossary/actions';
+import api from '../../api';
+import UsernameInput from '../../components/UsernameInput';
+import StartQuizButtons from '../../components/StartQuizButtons';
+import styles from './styles';
+
 
 type HomeProps = {
   glossaryData: GlossaryItem[];
@@ -31,11 +34,14 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
       glossaryActions.loadGlossary(props.glossaryData),
     );
   }, []);
-  
   return (
     <Layout title="Welcome to the Next Crypto Quiz">
+      <style jsx>{styles}</style>
       <h1>Welcome {user.name} to Crypto Quiz!</h1>
-      <TextInput onChange={handleUserInputChange} value= {user.name} />
+
+      <UsernameInput onChange={handleUserInputChange} value={user.name} />
+
+      <h2>Are you ready to start?</h2>
       <StartQuizButtons />
     </Layout>
   )

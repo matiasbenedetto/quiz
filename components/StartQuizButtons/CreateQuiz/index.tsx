@@ -4,12 +4,14 @@ import { useDispatchQuiz } from '../../../context/Quiz';
 import quizActions from '../../../context/Quiz/actions';
 import { getQuestionsFromGlossary } from './utils';
 import { Difficulty } from '../../../context/Glossary/types';
+import styles from './styles';
 
 type CreateQuizProps = {
   difficulty: Difficulty;
+  text: string;
 }
 
-function CreateQuiz({ difficulty }: CreateQuizProps) {
+function CreateQuiz({ difficulty, text }: CreateQuizProps) {
   const glossary = useGlossary();
   const  dispatchQuiz = useDispatchQuiz();
 
@@ -25,13 +27,16 @@ function CreateQuiz({ difficulty }: CreateQuizProps) {
   }
 
   return (
-    <Link href="/quiz/[id]" as="/quiz/0">
-      <button
-        onClick={()=>handleClick(difficulty)}
-      >
-        Create Quiz {Difficulty[difficulty]}
-      </button>
-    </Link>
+    <>
+      <style jsx>{styles}</style>
+      <Link href="/quiz/[id]" as="/quiz/0">
+        <button
+          onClick={()=>handleClick(difficulty)}
+        >
+          {text}
+        </button>
+      </Link>
+    </>
   )
 };
 

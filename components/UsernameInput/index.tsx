@@ -1,3 +1,5 @@
+import styles from './styles';
+
 
 type UsernameInputProps = {
   value: string;
@@ -6,7 +8,11 @@ type UsernameInputProps = {
 
 function UsernameInput({value, onChange}: UsernameInputProps) {
   return (
-    <input value={value} onChange={onChange} />
+    <form>
+      <style jsx>{styles}</style>
+      <label>Enter your name:</label>
+      <input value={value} onChange={onChange} placeholder="player..." />
+    </form>
   )
 }
 
