@@ -4,6 +4,7 @@ import { useDispatchQuiz } from '../../../context/Quiz';
 import quizActions from '../../../context/Quiz/actions';
 import { getQuestionsFromGlossary } from './utils';
 import { Difficulty } from '../../../context/Glossary/types';
+import { DEFAULT_QUESTIONS_QUANTITY } from '../../../constants';
 import styles from './styles';
 
 type CreateQuizProps = {
@@ -16,7 +17,7 @@ function CreateQuiz({ difficulty, text }: CreateQuizProps) {
   const  dispatchQuiz = useDispatchQuiz();
 
   const handleClick = (difficulty: Difficulty) => {
-    const questions = getQuestionsFromGlossary(glossary, difficulty, [], 10);
+    const questions = getQuestionsFromGlossary(glossary, difficulty, [], DEFAULT_QUESTIONS_QUANTITY);
     dispatchQuiz(
        quizActions.create({
          difficulty,

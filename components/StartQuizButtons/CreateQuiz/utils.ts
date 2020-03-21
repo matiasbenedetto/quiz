@@ -1,5 +1,6 @@
 import { Glossary, Difficulty, GlossaryItem } from '../../../context/Glossary/types';
 import { Question } from '../../../context/Quiz/types';
+import { DEFAULT_QUESTIONS_QUANTITY, QUESTION_ADDITIONAL_OPTIONS } from '../../../constants';
 
 function randomSort():number {
   return 0.5 - Math.random()
@@ -48,12 +49,12 @@ export function getQuestionsFromGlossary(
   glossary: Glossary,
   difficulty: Difficulty,
   alreadyAnswered: number[],
-  quantity: number =10
+  quantity: number = DEFAULT_QUESTIONS_QUANTITY
 ):Question[] {
   const glossaryItems = filterGlossaryItems(glossary, difficulty, alreadyAnswered);
   const quizItems = glossaryItems.slice(0, quantity);
   const terms = glossaryItems.map(item => item.title);
   return quizItems.map(item => (
-    makeQuestionFromGlossaryItem(item, getRandomTerms(item.title, terms, 3))
+    makeQuestionFromGlossaryItem(item, getRandomTerms(item.title, terms, QUESTION_ADDITIONAL_OPTIONS))
   ));
 }
