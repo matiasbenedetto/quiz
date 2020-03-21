@@ -1,15 +1,11 @@
-export enum DifficultyId {
-  Begginer = 1,
-  Intermediate = 2,
-  Advanced = 3,
-}
+import { Difficulty } from '../context/Glossary/types';
 
 export interface GlossaryItem {
   id: number;
   title: string;
   slug: string;
   excerpt: string;
-  difficultyId?: DifficultyId;
+  difficulty: Difficulty;
 }
 
 type GlossaryItemApiResponse = {
@@ -19,7 +15,7 @@ type GlossaryItemApiResponse = {
   excerpt: string,
   difficulty_id: number,
   difficulty?: {
-    level: number,
+    level: Difficulty,
     title: string,
   }
 };

@@ -6,6 +6,6 @@ export function normalizeGlossaryItems (items: GlossaryApiResponse):GlossaryItem
     title: item.title,
     slug: item.slug,
     excerpt: item.excerpt,
-    difficultyId: 1,
+    difficulty: item.difficulty ? item.difficulty.level : 0,
   }));
 }

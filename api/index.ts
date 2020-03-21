@@ -12,7 +12,7 @@ class Api {
         });
     }
 
-    async getGlossary():Promise<GlossaryItem[]> {
+    async getGlossary(): Promise<GlossaryItem[]> {
         const { data } = await this.client.get(`glossaries`);
         return normalizeGlossaryItems(data);
     };
