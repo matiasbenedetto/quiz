@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Difficulty } from '../../context/Glossary/types';
-import { useGlossary } from '../../context/Glossary';
-import { useDispatchQuiz } from '../../context/Quiz';
-import quizActions from '../../context/Quiz/actions';
+import { useGlossary } from '../../../context/Glossary';
+import { useDispatchQuiz } from '../../../context/Quiz';
+import quizActions from '../../../context/Quiz/actions';
 import { getQuestionsFromGlossary } from './utils';
+import { Difficulty } from '../../../context/Glossary/types';
 
 type CreateQuizProps = {
   difficulty: Difficulty;

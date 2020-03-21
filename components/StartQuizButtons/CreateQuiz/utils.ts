@@ -1,12 +1,8 @@
-import { Glossary, Difficulty, GlossaryItem } from '../../context/Glossary/types';
-import { Question } from '../../context/Quiz/types';
+import { Glossary, Difficulty, GlossaryItem } from '../../../context/Glossary/types';
+import { Question } from '../../../context/Quiz/types';
 
 function randomSort():number {
   return 0.5 - Math.random()
-}
-
-function getRandomInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function filterGlossaryItems(
@@ -27,13 +23,12 @@ function filterGlossaryItems(
   )
 }
 
-function getRandomTerms(glossary: Glossary, quantity: number): string[] {
-  const end = getRandomInt(quantity, glossary.items.length);
-  const start = end - quantity;
+function getRandomTerms(exclude: string, terms: string[], quantity: number): string[] {
   return (
-    glossary.items
-      .slice(start, end)
-      .map(item => item.title)
+    terms
+      .sort(randomSort)
+      .filter(item => item !== exclude)
+      .slice(0, quantity)
   )
 }
 
@@ -55,9 +50,10 @@ export function getQuestionsFromGlossary(
   alreadyAnswered: number[],
   quantity: number =10
 ):Question[] {
-  const glossaryItems = filterGlossaryItems(glossary, difficulty, alreadyAnswered)
-                          .slice(0,quantity);
-  return glossaryItems.map(item => (
-    makeQuestionFromGlossaryItem(item, getRandomTerms(glossary, 3))
+  const glossaryItems = filterGlossaryItems(glossary, difficulty, alreadyAnswered);
+  const quizItems = glossaryItems.slice(0, quantity);
+  const terms = glossaryItems.map(item => item.title);
+  return quizItems.map(item => (
+    makeQuestionFromGlossaryItem(item, getRandomTerms(item.title, terms, 3))
   ));
 }
