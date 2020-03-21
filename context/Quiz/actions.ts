@@ -8,11 +8,11 @@ function create(quiz: Quiz): CreateQuiz {
   }
 }
 
-function answer(questionId: number, answer: string): AnswerQuestion {
+function answer(id: number, answer: string): AnswerQuestion {
   return {
     type: QuizActionTypes.ANSWER_QUESTION,
     payload: {
-      questionId,
+      id,
       answer,
     }, 
   }

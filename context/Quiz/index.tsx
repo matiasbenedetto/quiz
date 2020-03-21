@@ -18,8 +18,12 @@ function reducer (state: Quiz, action: QuizAction): Quiz {
       }
 
     case QuizActionTypes.ANSWER_QUESTION:
+      const { id, answer } = action.payload;
+      const questions = [...state.questions];
+      questions[id].userAnswer = answer;
       return {
-        ...state
+        ...state,
+        questions
       }
       
     default:

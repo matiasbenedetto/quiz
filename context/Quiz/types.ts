@@ -26,7 +26,7 @@ export interface CreateQuiz {
 export interface AnswerQuestion {
   type: QuizActionTypes.ANSWER_QUESTION,
   payload: {
-    questionId: number,
+    id: number,
     answer: string,
   },
 };
