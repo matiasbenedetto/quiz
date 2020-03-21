@@ -31,7 +31,10 @@ const reducer = (state: User, action: UserAction): User => {
     case UserActionTypes.USER_SET_CORRECT_ANSWERS:
       return {
         ...state,
-        wellAnsweredQuestions: state.wellAnsweredQuestions.concat(action.payload),
+        wellAnsweredQuestions: [
+          ...state.wellAnsweredQuestions,
+          ...action.payload,
+        ]
       }
 
     default:
