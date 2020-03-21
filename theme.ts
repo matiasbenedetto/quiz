@@ -2,13 +2,18 @@ const color = {
   /* backgrounds */
   background: '#2E2E2E',
   darkBackground: '#171717',
-  lightBackground: '#FAFAFA',
+  lightBackground: '#484848',
+  lighterBackground: 'white',
 
   /* text */
   text: 'white',
 
   /* accent */
   accent: '#EEBE18',
+
+  /*  */
+  correct: '#409ae2',
+  wrong: '#F23051',
 };
 
 const gutter = {

@@ -1,10 +1,11 @@
-import { useQuiz } from '../../context/Quiz';
-import StartQuizButtons from "../../components/StartQuizButtons";
-import Answer from '../../components/Answer';
 import { useEffect } from 'react';
-import { useDispatchUser } from '../../context/User';
-import userActions from '../../context/User/actions';
-import Layout from '../../components/Layout';
+import { useQuiz } from '../../../context/Quiz';
+import StartQuizButtons from "../../../components/StartQuizButtons";
+import Answer from '../../../components/Answer/Answer';
+import { useDispatchUser } from '../../../context/User';
+import userActions from '../../../context/User/actions';
+import Layout from '../../../components/Layout';
+import styles from './styles';
 
 
 function Results() {
@@ -25,12 +26,13 @@ function Results() {
 
   return (
     <Layout>
+      <style jsx>{styles}</style>
       <h1>Results</h1>
-      {quiz.questions.map(item => <Answer question={item} key={item.glossaryId} />)}
-      <div>
-        <h2>Continue Playing</h2>
-        <StartQuizButtons />
+      <div className="resultsGrid">
+        {quiz.questions.map(item => <Answer question={item} key={item.glossaryId} />)}
       </div>
+      <h2>Continue Playing</h2>
+      <StartQuizButtons />
     </Layout>
   )
 }

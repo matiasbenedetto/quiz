@@ -22,9 +22,12 @@ const Layout: React.FunctionComponent<Props> = ({
       <UserBar />
     </header>
     <main className="mainContent">
-      {children}
+      <div className="container">
+        {children}
+      </div>
     </main>
     <footer>
+
     </footer>
   </div>
 )

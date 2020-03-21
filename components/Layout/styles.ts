@@ -15,8 +15,14 @@ const styles = css.global`
   }
 
   .mainContent {
-    padding: ${theme.gutter[1]};
+    padding: ${theme.gutter[4]};
     text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mainContent .container {
+    width: 70vw;
   }
 `;
 

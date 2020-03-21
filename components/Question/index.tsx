@@ -1,5 +1,7 @@
 import React from 'react';
-import { Question as IQuestion } from '../context/Quiz/types';
+import Card from '../Card';
+import { Question as IQuestion } from '../../context/Quiz/types';
+import styles from './styles';
 
 
 type QuestionProps = {
@@ -10,8 +12,11 @@ type QuestionProps = {
 function Question ({ question, onAnswer }: QuestionProps) {
   return (
     <div>
-      <h1>{question.text}</h1>
-      <div>
+      <style jsx>{styles}</style>
+      <Card>
+        <p>This definition:</p>
+        <h1>{question.text}</h1>
+        <p>Matchs which term?:</p>
         {question.options.map(option => (
           <button
             onClick={() => onAnswer(option)}
@@ -20,7 +25,7 @@ function Question ({ question, onAnswer }: QuestionProps) {
             {option}
           </button>
         ))}
-      </div>
+      </Card>
     </div>
   )  
 }

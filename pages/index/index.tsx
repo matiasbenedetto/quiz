@@ -10,6 +10,7 @@ import glossaryActions from '../../context/Glossary/actions';
 import api from '../../api';
 import UsernameInput from '../../components/UsernameInput';
 import StartQuizButtons from '../../components/StartQuizButtons';
+import Card from '../../components/Card';
 import styles from './styles';
 
 
@@ -38,9 +39,9 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
     <Layout title="Welcome to the Next Crypto Quiz">
       <style jsx>{styles}</style>
       <h1>Welcome {user.name} to Crypto Quiz!</h1>
-
-      <UsernameInput onChange={handleUserInputChange} value={user.name} />
-
+      <Card>
+        <UsernameInput onChange={handleUserInputChange} value={user.name} />
+      </Card>
       <h2>Are you ready to start?</h2>
       <StartQuizButtons />
     </Layout>
