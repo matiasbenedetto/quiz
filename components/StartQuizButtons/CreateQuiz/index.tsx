@@ -9,10 +9,10 @@ import Button from '../../Button';
 
 type CreateQuizProps = {
   difficulty: Difficulty;
-  text: string;
+  children: React.ReactNode;
 }
 
-function CreateQuiz({ difficulty, text }: CreateQuizProps) {
+function CreateQuiz({ difficulty, children }: CreateQuizProps) {
   const glossary = useGlossary();
   const  dispatchQuiz = useDispatchQuiz();
 
@@ -33,7 +33,7 @@ function CreateQuiz({ difficulty, text }: CreateQuizProps) {
         <Button
           onClick={()=>handleClick(difficulty)}
         >
-          {text}
+          {children}
         </Button>
       </Link>
     </>
