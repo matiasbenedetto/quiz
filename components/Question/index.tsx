@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card';
 import { Question as IQuestion } from '../../context/Quiz/types';
+import Button from '../Button';
 import styles from './styles';
 
 
@@ -18,12 +19,12 @@ function Question ({ question, onAnswer }: QuestionProps) {
         <h1>{question.text}</h1>
         <p>Matchs which term?:</p>
         {question.options.map(option => (
-          <button
+          <Button
             onClick={() => onAnswer(option)}
             key={option}
           >
             {option}
-          </button>
+          </Button>
         ))}
       </Card>
     </div>

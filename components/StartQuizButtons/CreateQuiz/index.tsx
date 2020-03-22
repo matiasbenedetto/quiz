@@ -5,7 +5,7 @@ import quizActions from '../../../context/Quiz/actions';
 import { getQuestionsFromGlossary } from './utils';
 import { Difficulty } from '../../../context/Glossary/types';
 import { DEFAULT_QUESTIONS_QUANTITY } from '../../../constants';
-import styles from './styles';
+import Button from '../../Button';
 
 type CreateQuizProps = {
   difficulty: Difficulty;
@@ -29,13 +29,12 @@ function CreateQuiz({ difficulty, text }: CreateQuizProps) {
 
   return (
     <>
-      <style jsx>{styles}</style>
       <Link href="/quiz/[id]" as="/quiz/0">
-        <button
+        <Button
           onClick={()=>handleClick(difficulty)}
         >
           {text}
-        </button>
+        </Button>
       </Link>
     </>
   )

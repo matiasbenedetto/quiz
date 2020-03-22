@@ -3,7 +3,7 @@ import theme from '../../theme';
 
 
 const styles = css`
-  button {
+  Button {
     background-color: ${theme.color.accent};
     border: none;
     border-radius: 3px;

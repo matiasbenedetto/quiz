@@ -14,7 +14,7 @@ const styles = css`
   }
 
   p, span {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-bottom: ${theme.gutter[1]};
   }
 
@@ -22,7 +22,7 @@ const styles = css`
     padding: 0 1rem;
   }
 
-  span.correct {
+  span.correct{
     background-color: ${theme.color.correct};
   }
 
