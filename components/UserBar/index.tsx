@@ -8,8 +8,8 @@ function UserBar() {
     <>
       <style jsx>{styles}</style>
       <div className="userBar">
-        <div className="user">Player: {user.name || 'anonymous'}</div>
-        <div className="score">Score: {user.score}</div>
+        <p className="user">Player: {user.name || 'anonymous'}</p>
+        <p className="score">Score: {user.score}</p>
       </div>
     </>
   )

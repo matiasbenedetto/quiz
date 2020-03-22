@@ -12,7 +12,8 @@ const styles = css`
     width: 100%;
     margin-bottom: ${theme.gutter[2]};
     cursor: pointer;
-    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.08);
   }
 `;
 

@@ -1,7 +1,8 @@
 import * as React from 'react'
 import Head from 'next/head'
 import UserBar from '../UserBar';
-import styles from './styles';
+import { globalStyles, layoutStyles } from './styles';
+import Footer from '../Footer';
 
 type Props = {
   title?: string
@@ -11,8 +12,9 @@ const Layout: React.FunctionComponent<Props> = ({
   children,
   title,
 }) => (
-  <div>
-    <style jsx>{styles}</style>
+  <div className="wrapper">
+    <style jsx>{globalStyles}</style>
+    <style jsx>{layoutStyles}</style>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -21,14 +23,12 @@ const Layout: React.FunctionComponent<Props> = ({
     <header>
       <UserBar />
     </header>
-    <main className="mainContent">
+    <main className="content">
       <div className="container">
         {children}
       </div>
     </main>
-    <footer>
-
-    </footer>
+    <Footer />
   </div>
 )
 

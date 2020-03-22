@@ -11,7 +11,6 @@ import api from '../../api';
 import UsernameInput from '../../components/UsernameInput';
 import StartQuizButtons from '../../components/StartQuizButtons';
 import Card from '../../components/Card';
-import styles from './styles';
 
 
 type HomeProps = {
@@ -37,7 +36,6 @@ const Home: NextPage<HomeProps> = (props: HomeProps) => {
   }, []);
   return (
     <Layout title="Welcome to the Next Crypto Quiz">
-      <style jsx>{styles}</style>
       <h1>Welcome {user.name} to Crypto Quiz!</h1>
       <Card>
         <UsernameInput onChange={handleUserInputChange} value={user.name} />

@@ -15,7 +15,8 @@ const styles = css`
     color: ${theme.color.text};
     outline: none;
     text-align: center; 
-    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 `;
 

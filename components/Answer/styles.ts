@@ -13,15 +13,6 @@ const styles = css`
     flex-grow: 1;
   }
 
-  p, span {
-    font-size: 0.9rem;
-    margin-bottom: ${theme.gutter[1]};
-  }
-
-  span {
-    padding: 0 1rem;
-  }
-
   span.correct{
     background-color: ${theme.color.correct};
   }
@@ -31,7 +22,6 @@ const styles = css`
   }
 
   .userAnswerTitle {
-    font-size: 0.6rem;
     text-decoration: underline;
   }
 

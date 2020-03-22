@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '../Card';
 import { Question as IQuestion } from '../../context/Quiz/types';
 import Button from '../Button';
-import styles from './styles';
 
 
 type QuestionProps = {
@@ -13,11 +12,10 @@ type QuestionProps = {
 function Question ({ question, onAnswer }: QuestionProps) {
   return (
     <div>
-      <style jsx>{styles}</style>
       <Card>
         <p>This definition:</p>
         <h1>{question.text}</h1>
-        <p>Matchs which term?:</p>
+        <p>Matches which term?:</p>
         {question.options.map(option => (
           <Button
             onClick={() => onAnswer(option)}
