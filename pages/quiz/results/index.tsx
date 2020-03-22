@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useQuiz } from '../../../context/Quiz';
 import StartQuizButtons from "../../../components/StartQuizButtons";
-import Answer from '../../../components/Answer/Answer';
+import Answer from '../../../components/Answer';
 import { useDispatchUser } from '../../../context/User';
 import userActions from '../../../context/User/actions';
 import Layout from '../../../components/Layout';
@@ -28,6 +28,7 @@ function Results() {
     <Layout>
       <style jsx>{styles}</style>
       <h1>Results</h1>
+      <p>You win {points} {points!=1 ? 'points' : 'point'}</p>
       <div className="resultsGrid">
         {quiz.questions.map(item => <Answer question={item} key={item.glossaryId} />)}
       </div>
