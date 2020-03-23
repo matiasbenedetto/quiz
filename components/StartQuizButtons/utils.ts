@@ -2,7 +2,7 @@ import { Glossary, Difficulty, GlossaryItem } from '../../context/Glossary/types
 import { Question } from '../../context/Quiz/types';
 import { DEFAULT_QUESTIONS_QUANTITY, QUESTION_ADDITIONAL_OPTIONS } from '../../constants';
 
-function randomSort():number {
+function random():number {
   return 0.5 - Math.random()
 }
 
@@ -11,7 +11,7 @@ function filterGlossaryItems(
   difficulty: Difficulty,
   alreadyAnswered: number[],
 ): GlossaryItem[] {
-  const sortBy = (item: GlossaryItem) => (
+  const sortGlossary = (item: GlossaryItem) => (
       (
         !alreadyAnswered.includes(item.id) &&
         ( difficulty !== Difficulty.Uncategorized ? item.difficulty === difficulty : true )
@@ -19,15 +19,15 @@ function filterGlossaryItems(
   )
   return (
     glossary
-      .sort(randomSort)
-      .sort(sortBy)
+      .sort(random)
+      .sort(sortGlossary)
   )
 }
 
 function getRandomTerms(exclude: string, terms: string[], quantity: number): string[] {
   return (
     terms
-      .sort(randomSort)
+      .sort(random)
       .filter(item => item !== exclude)
       .slice(0, quantity)
   )
@@ -40,7 +40,7 @@ function makeQuestionFromGlossaryItem(item: GlossaryItem, wrongAnswers: string[]
     options: [
       item.title,
       ...wrongAnswers,
-    ].sort(randomSort),
+    ].sort(random),
     correctAnswer: item.title,
   }
 }
