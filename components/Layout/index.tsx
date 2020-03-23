@@ -4,33 +4,33 @@ import UserBar from '../UserBar';
 import { globalStyles, layoutStyles } from './styles';
 import Footer from '../Footer';
 
-type Props = {
-  title?: string
+type LayoutProps = {
+  title?: string,
+  children: React.ReactNode,
 }
 
-const Layout: React.FunctionComponent<Props> = ({
-  children,
-  title,
-}) => (
-  <div className="wrapper">
-    <style jsx>{globalStyles}</style>
-    <style jsx>{layoutStyles}</style>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <UserBar />
-    </header>
-    <main className="content">
-      <div className="container">
-        {children}
-      </div>
-    </main>
-    <Footer />
-  </div>
-)
+function Layout({ children, title }: LayoutProps) {
+  return (
+    <div className="wrapper">
+      <style jsx>{globalStyles}</style>
+      <style jsx>{layoutStyles}</style>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <header>
+        <UserBar />
+      </header>
+      <main className="content">
+        <div className="container">
+          {children}
+        </div>
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
 Layout.defaultProps = {
   title: 'Next Cripto Quiz',

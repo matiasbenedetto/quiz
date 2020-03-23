@@ -12,13 +12,13 @@ type QuizAppProps = {
 
 function QuizApp({ Component, pageProps, glossary }: QuizAppProps) {
   return (
-    <QuizProvider>
-      <GlossaryProvider value={glossary}>
+    <GlossaryProvider value={glossary}>
+      <QuizProvider>
         <UserProvider>
             <Component {...pageProps} />
         </UserProvider>
-      </GlossaryProvider>
-    </QuizProvider>
+      </QuizProvider>
+    </GlossaryProvider>
   )
 }
 
