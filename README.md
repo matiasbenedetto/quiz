@@ -1,9 +1,9 @@
 # Next Cripto Quiz
-## Trivia app game made based on the Binance glossary API.
+Trivia app game made based on the Binance glossary API.
 
-### Tech stack: NextJs, React, Typescript
-### Styles: Styled-JSX
-### Tests: Jest, Enzyme 
+Tech stack: **NextJs, React, Typescript**
+Styles: **Styled-JSX**
+Tests: **Jest, Enzyme**
 
 Try the live version:
 https://quiz.matiasbenedetto.now.sh
