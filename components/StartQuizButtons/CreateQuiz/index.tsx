@@ -29,7 +29,7 @@ function CreateQuiz({ difficulty, children }: CreateQuizProps) {
 
   return (
     <>
-      <Link href="/quiz/[id]" as="/quiz/0">
+      <Link href="/quiz">
         <Button
           onClick={()=>handleClick(difficulty)}
         >

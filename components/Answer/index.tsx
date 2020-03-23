@@ -23,7 +23,7 @@ function Answer({ question }: AnswerProps) {
         </p>
         <p className="text">{question.text}</p>
         <p className="userAnswerTitle">Your answer:</p>
-        <p className="userAnswer">{question.userAnswer}</p>
+        <p className="userAnswer">{question.userAnswer || 'No answer'}</p>
       </div>
     </Card>
   )
