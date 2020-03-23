@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "test": "jest"
   },
   "keywords": [
     "quiz",
@@ -23,10 +24,21 @@
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.1.4",
     "@types/node": "^13.9.2",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/styled-jsx": "^2.2.8",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^25.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   }
 }
