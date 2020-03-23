@@ -18,7 +18,7 @@ function filterGlossaryItems(
       ) ? -1 : 1
   )
   return (
-    glossary.items
+    glossary
       .sort(randomSort)
       .sort(sortBy)
   )

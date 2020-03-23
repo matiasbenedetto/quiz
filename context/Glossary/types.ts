@@ -13,15 +13,4 @@ export interface GlossaryItem {
   difficulty: Difficulty;
 }
 
-export interface Glossary {
-  items: GlossaryItem[];
-};
-
-export enum GlossaryActionTypes {
-  LOAD_GLOSSARY_ITEMS= 'LOAD_GLOSSARY_ITEMS',
-}
-
-export interface LoadGlossaryItems {
-  type: GlossaryActionTypes.LOAD_GLOSSARY_ITEMS,
-  payload: GlossaryItem[],
-}
+export type Glossary = GlossaryItem[];
