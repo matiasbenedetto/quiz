@@ -1,6 +1,6 @@
-import { Glossary, Difficulty, GlossaryItem } from '../../../context/Glossary/types';
-import { Question } from '../../../context/Quiz/types';
-import { DEFAULT_QUESTIONS_QUANTITY, QUESTION_ADDITIONAL_OPTIONS } from '../../../constants';
+import { Glossary, Difficulty, GlossaryItem } from '../../context/Glossary/types';
+import { Question } from '../../context/Quiz/types';
+import { DEFAULT_QUESTIONS_QUANTITY, QUESTION_ADDITIONAL_OPTIONS } from '../../constants';
 
 function randomSort():number {
   return 0.5 - Math.random()

@@ -1,9 +1,9 @@
 import css from 'styled-jsx/css';
-import theme from '../../../theme';
+import theme from '../../theme';
 
 
 const styles = css`
-  .resultsGrid {
+  div {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: ${theme.gutter[1]};
@@ -11,13 +11,13 @@ const styles = css`
   }
 
   @media(${theme.breakpoint.md}) {
-    .resultsGrid {
+    div {
         grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media(${theme.breakpoint.lg}) {
-    .resultsGrid {
+    div {
         grid-template-columns: repeat(5, 1fr);
     }
   }
