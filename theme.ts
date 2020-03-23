@@ -11,7 +11,7 @@ const color = {
   /* accent */
   accent: '#EEBE18',
 
-  /*  */
+  /* correctness */
   correct: '#409ae2',
   wrong: '#F23051',
 };

@@ -4,7 +4,6 @@ import { Glossary } from './types';
 
 const GlossaryContext = React.createContext<Glossary>(null);
 
-
 export const GlossaryProvider = ({children, value}) => {
   return (
     <GlossaryContext.Provider value={value}>
@@ -12,6 +11,5 @@ export const GlossaryProvider = ({children, value}) => {
     </GlossaryContext.Provider>
   )
 }
-
 
 export const useGlossary = () => useContext(GlossaryContext);
