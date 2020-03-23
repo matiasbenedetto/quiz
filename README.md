@@ -2,11 +2,16 @@
 Trivia app game made based on the Binance glossary API.
 
 Tech stack: **NextJs, React, Typescript**
+
 Styles: **Styled-JSX**
+
 Tests: **Jest, Enzyme**
+
 
 Try the live version:
 https://quiz.matiasbenedetto.now.sh
+
+![screenshots](https://user-images.githubusercontent.com/1310626/77369279-f3903100-6d3c-11ea-9994-62b1bc06244b.png)
 
 ## Development:
 `npm run dev`
@@ -29,8 +34,6 @@ The data from the API is requested only once. The entire glossary is stored in a
 When a user selects an difficulty option to start the game, the glossary is filtered accordinly to user difficuly selection and the questions that were already answered ok.
 
 Based on the user actions the components dispatch actions to the contexts and these are handled by reducers in a flux/redux like style.
-
-## Screenshot
 
 ## Pending to do:
 - Better test coverage
